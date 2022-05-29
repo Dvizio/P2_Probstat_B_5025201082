@@ -94,6 +94,89 @@ Karena p-value < a , Hipotesis awal ditolak
 Dengan tingkat keyakinan 95%, diyakini bahwa tidak terdapat 
 perbedaan rata-rata saham pada perusahaan di Bandung dan Bali.
 
+### Soal 4
+Seorang Peneliti sedang meneliti spesies dari kucing di ITS. Dalam penelitiannya ia mengumpulkan data tiga spesies kucing yaitu kucing oren, kucing hitam dan kucing putih dengan panjangnya masing-masing.
+
+Jika diketahui dataset pada https://intip.in/datasetprobstat1 dan H0 adalah tidak ada perbedaan panjang antara ketiga spesies atau rata-rata panjangnya sama, maka kerjakan atau carilah:
+
+#### Soal 4A
+Buatlah masing masing jenis spesies menjadi 3 subjek "Grup" (grup 1, grup 2, dan grup 3). Lalu gambarkan plot kuantil normal untuk setiap kelompok dan lihat apakah ada outlier utama dalam homogenitas varians.
+
+```
+dataoneway <- read.table("data_soal_4.txt", h = T)
+attach(dataoneway)
+names(dataoneway)
+
+dataoneway$Group <- as.factor(dataoneway$Group)
+dataoneway$Group = factor(dataoneway$Group,labels = c("Kucing Oren", "Kucing Hitam", "Kucing Putih"))
+
+class(dataoneway$Group)
+
+Group1 <- subset(dataoneway, Group == "Kucing Oren")
+Group2 <- subset(dataoneway, Group == "Kucing Hitam")
+Group3 <- subset(dataoneway, Group == "Kucing Putih")
+
+qqnorm(Group1$Length)
+qqline(Group1$Length)
+
+qqnorm(Group2$Length)
+qqline(Group2$Length)
+
+qqnorm(Group3$Length)
+qqline(Group3$Length)
+```
+maka didapat
+group 1 :
+![image](https://user-images.githubusercontent.com/82019030/170880468-042802ce-eb2c-4324-82ce-cd42eda79653.png)
+
+group 2:
+![image](https://user-images.githubusercontent.com/82019030/170880476-4cffd94b-8e82-4bd4-a1d3-bc594eec0ba0.png)
+
+group 3:
+![image](https://user-images.githubusercontent.com/82019030/170880508-d442f36e-3966-470d-9737-ca53b5bb449f.png)
+
+#### 4B
+Carilah atau periksalah homogeneity of variances-nya. Berapa nilai p yang didapatkan? Apa hipotesis dan kesimpulan yang dapat diambil?
+```
+bartlett.test(Length ~ Group, data = dataoneway)
+```
+![image](https://user-images.githubusercontent.com/82019030/170880595-2f20708f-d8c6-40fe-a910-1797ef7964b2.png)
+
+#### 4C
+Untuk uji ANOVA (satu arah), buatlah model linier dengan panjang versus grup dan beri nama model tersebut model 1.
+```
+model1 = lm(Length ~ Group, data = dataoneway)
+anova(model1)
+```
+![image](https://user-images.githubusercontent.com/82019030/170880636-5ea425f3-cded-4465-977d-a0877d12a53a.png)
+
+#### 4D
+Dari hasil poin C, berapakah nilai p? Apa yang dapat Anda simpulkan dari H0?
+```
+Berdasarkan hasil yang didapatkan pada poin sebelumnya, pada taraf uji 5% didapatkan nilai p-value sebesar 0.0013. Maka, terdapat perbedaan panjang kucing yang signifikan berdasarkan grupnya.
+```
+#### 4E
+Verifikasilah jawaban model 1 dengan Post-hoc test Tukey HSD, dari nilai p yang didapatkan apakah satu jenis kucing lebih panjang dari yang lain? Jelaskan.
+```
+TukeyHSD(aov(model1))
+```
+![image](https://user-images.githubusercontent.com/82019030/170880713-1744bca6-79e2-4e03-8589-92911dd056c0.png)
+
+Dari hasil uji Tukey, dapat dilihat kombinasi dari kelompok mana yang secara signifikan berbeda. Jika menggunakan 𝛼 = 5%, perbedaan panjang kucing yang signifikan adalah grup 2 (Kucing Hitam) terhadap grup 1 (Kucing Oren) dan grup 3 (Kucing Putih).
+
+#### 4F
+Visualisasikan data dengan ggplot2
+```
+install.packages("ggplot2")
+library("ggplot2")
+
+ggplot(dataoneway, aes(x = Group, y = Length)) + geom_boxplot(fill = "grey80", colour = "black") + scale_x_discrete() + xlab("Treatment Group") + ylab("Length (cm)")
+
+```
+
+![image](https://user-images.githubusercontent.com/82019030/170880799-49bddb1e-0b42-46b9-b7d4-f522a1fc9bbe.png)
+
+
 ### Soal 5
 Data yang digunakan merupakan hasil eksperimen yang dilakukan untuk mengetahui pengaruh suhu operasi (100˚C, 125˚C dan 150˚C) dan tiga jenis kaca pelat muka (A, B dan C) pada keluaran cahaya tabung osiloskop. Percobaan dilakukan sebanyak 27 kali dan didapat data sebagai berikut: Data Hasil Eksperimen. Dengan data tersebut:
 
