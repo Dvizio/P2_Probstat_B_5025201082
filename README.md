@@ -42,6 +42,7 @@ maka dapat disimpulkan hasil tidak terpengaruh
 
 ### Soal 2
 Diketahui bahwa mobil dikemudikan rata-rata lebih dari 20.000 kilometer per tahun. Untuk menguji klaim ini, 100 pemilik mobil yang dipilih secara acak diminta untuk mencatat jarak yang mereka tempuh. Jika sampel acak menunjukkan rata-rata 23.500 kilometer dan standar deviasi 3900 kilometer. (Kerjakan menggunakan 2 library seperti referensi pada modul).
+
 ![image](https://user-images.githubusercontent.com/82019030/170876649-c8f3f69f-7c67-4838-a73f-320ea3e71df5.png)
 
 #### 2A
@@ -66,16 +67,20 @@ Dari data diatas berilah keputusan serta kesimpulan yang didapatkan dari hasil d
 
 #### 3A
 H0 dan H1 dilakukan perhitungan H0 sebagai berikut
+
 ![image](https://user-images.githubusercontent.com/82019030/170876881-f797b875-a643-4a16-9245-5ce571e42ed6.png)
 
 Lalu perhitungan H1
+
 ![image](https://user-images.githubusercontent.com/82019030/170876914-296a08cc-bf1e-47cc-8935-9c22b8c6f3df.png)
 
 #### 3B
+
 ![image](https://user-images.githubusercontent.com/82019030/170876970-77e4b137-1ff1-4ec2-9ed1-6453bec80bce.png)
 
 #### 3C
 Uji Statistik dengan df = 2
+
 ![image](https://user-images.githubusercontent.com/82019030/170877494-ed6d06d9-910e-4eb5-8226-66afb99e7940.png)
 
 #### 3D
@@ -83,6 +88,7 @@ Nilai kritikal =
 ```
 qchisq(p = 0.05, df = 2, lower.tail=FALSE)
 ```
+
 ![image](https://user-images.githubusercontent.com/82019030/170877163-6e733870-773c-47b1-8404-fbb2fff0e30e.png)
 
 #### 3E
@@ -127,12 +133,15 @@ qqline(Group3$Length)
 ```
 maka didapat
 group 1 :
+
 ![image](https://user-images.githubusercontent.com/82019030/170880468-042802ce-eb2c-4324-82ce-cd42eda79653.png)
 
 group 2:
+
 ![image](https://user-images.githubusercontent.com/82019030/170880476-4cffd94b-8e82-4bd4-a1d3-bc594eec0ba0.png)
 
 group 3:
+
 ![image](https://user-images.githubusercontent.com/82019030/170880508-d442f36e-3966-470d-9737-ca53b5bb449f.png)
 
 #### 4B
@@ -140,6 +149,7 @@ Carilah atau periksalah homogeneity of variances-nya. Berapa nilai p yang didapa
 ```
 bartlett.test(Length ~ Group, data = dataoneway)
 ```
+
 ![image](https://user-images.githubusercontent.com/82019030/170880595-2f20708f-d8c6-40fe-a910-1797ef7964b2.png)
 
 #### 4C
@@ -148,6 +158,7 @@ Untuk uji ANOVA (satu arah), buatlah model linier dengan panjang versus grup dan
 model1 = lm(Length ~ Group, data = dataoneway)
 anova(model1)
 ```
+
 ![image](https://user-images.githubusercontent.com/82019030/170880636-5ea425f3-cded-4465-977d-a0877d12a53a.png)
 
 #### 4D
@@ -160,6 +171,7 @@ Verifikasilah jawaban model 1 dengan Post-hoc test Tukey HSD, dari nilai p yang 
 ```
 TukeyHSD(aov(model1))
 ```
+
 ![image](https://user-images.githubusercontent.com/82019030/170880713-1744bca6-79e2-4e03-8589-92911dd056c0.png)
 
 Dari hasil uji Tukey, dapat dilihat kombinasi dari kelompok mana yang secara signifikan berbeda. Jika menggunakan 𝛼 = 5%, perbedaan panjang kucing yang signifikan adalah grup 2 (Kucing Hitam) terhadap grup 1 (Kucing Oren) dan grup 3 (Kucing Putih).
@@ -182,6 +194,7 @@ Data yang digunakan merupakan hasil eksperimen yang dilakukan untuk mengetahui p
 
 #### 5A
 Buatlah plot sederhana untuk visualisasi data
+
 ![image](https://user-images.githubusercontent.com/82019030/170879424-e0824bc0-fc16-4824-8636-3f1a2275f9e4.png)
 
 ![image](https://user-images.githubusercontent.com/82019030/170879456-5e26c3f9-63dc-4c0e-b512-fa13fd1e69f3.png)
@@ -190,6 +203,7 @@ Buatlah plot sederhana untuk visualisasi data
 
 #### 5B
 Lakukan uji ANOVA dua arah
+
 ![image](https://user-images.githubusercontent.com/82019030/170879507-bcc21e8a-7657-494c-a61f-5698724e7b6b.png)
 
 ![image](https://user-images.githubusercontent.com/82019030/170879519-149b535b-5864-4f36-860b-746889d3db1f.png)
@@ -197,10 +211,12 @@ Lakukan uji ANOVA dua arah
 
 #### 5C
 Tampilkan tabel dengan mean dan standar deviasi keluaran cahaya untuk setiap perlakuan (kombinasi kaca pelat muka dan suhu operasi)
+
 ![image](https://user-images.githubusercontent.com/82019030/170879554-fc4a2f9b-6707-4de7-942b-865add3516f4.png)
 
 #### 5D
 Uji Tukey
+
 ![image](https://user-images.githubusercontent.com/82019030/170879589-dbfed9a4-415b-494c-a3c8-22ed3b5ab11c.png)
 
 ![image](https://user-images.githubusercontent.com/82019030/170879610-c48a2c92-b76c-4dfd-87a2-1b8aa83af441.png)
