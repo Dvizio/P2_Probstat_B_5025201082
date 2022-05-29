@@ -1,6 +1,8 @@
 # P2_Probstat_B_5025201082
 Nama: Farrel Emerson
+
 Kelas: Probstat B
+
 NRP: 5025201082
 
 ## Penjelasan
@@ -92,9 +94,40 @@ Karena p-value < a , Hipotesis awal ditolak
 Dengan tingkat keyakinan 95%, diyakini bahwa tidak terdapat 
 perbedaan rata-rata saham pada perusahaan di Bandung dan Bali.
 
-### Soal 4
-Seorang Peneliti sedang meneliti spesies dari kucing di ITS . Dalam penelitiannya ia mengumpulkan data tiga spesies kucing yaitu kucing oren, kucing hitam dan kucing putih dengan panjangnya masing-masing. Jika : diketahui dataset https://intip.in/datasetprobstat1 H0 : Tidak ada perbedaan panjang antara ketiga spesies atau rata-rata panjangnya sama.
+### Soal 5
+Data yang digunakan merupakan hasil eksperimen yang dilakukan untuk mengetahui pengaruh suhu operasi (100˚C, 125˚C dan 150˚C) dan tiga jenis kaca pelat muka (A, B dan C) pada keluaran cahaya tabung osiloskop. Percobaan dilakukan sebanyak 27 kali dan didapat data sebagai berikut: Data Hasil Eksperimen. Dengan data tersebut:
 
-#### 4A
-Plot 3 subjek grup
+#### 5A
+Buatlah plot sederhana untuk visualisasi data
+![image](https://user-images.githubusercontent.com/82019030/170879424-e0824bc0-fc16-4824-8636-3f1a2275f9e4.png)
+
+![image](https://user-images.githubusercontent.com/82019030/170879456-5e26c3f9-63dc-4c0e-b512-fa13fd1e69f3.png)
+
+![image](https://user-images.githubusercontent.com/82019030/170879472-821eb8f6-fde1-4343-828b-2a749023b39e.png)
+
+#### 5B
+Lakukan uji ANOVA dua arah
+![image](https://user-images.githubusercontent.com/82019030/170879507-bcc21e8a-7657-494c-a61f-5698724e7b6b.png)
+
+![image](https://user-images.githubusercontent.com/82019030/170879519-149b535b-5864-4f36-860b-746889d3db1f.png)
+
+
+#### 5C
+Tampilkan tabel dengan mean dan standar deviasi keluaran cahaya untuk setiap perlakuan (kombinasi kaca pelat muka dan suhu operasi)
+![image](https://user-images.githubusercontent.com/82019030/170879554-fc4a2f9b-6707-4de7-942b-865add3516f4.png)
+
+#### 5D
+Uji Tukey
+![image](https://user-images.githubusercontent.com/82019030/170879589-dbfed9a4-415b-494c-a3c8-22ed3b5ab11c.png)
+
+![image](https://user-images.githubusercontent.com/82019030/170879610-c48a2c92-b76c-4dfd-87a2-1b8aa83af441.png)
+
+#### 5E
+plot sederhana untuk visualisasi data
+![image](https://user-images.githubusercontent.com/82019030/170879635-7ad92a59-d425-4c92-a242-0a51a585205f.png)
+![image](https://user-images.githubusercontent.com/82019030/170879650-99f520c3-e888-4192-8ce9-959f5b3f7872.png)
+
+
+
+
 
