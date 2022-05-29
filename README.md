@@ -195,7 +195,7 @@ Data yang digunakan merupakan hasil eksperimen yang dilakukan untuk mengetahui p
 #### 5A
 Buatlah plot sederhana untuk visualisasi data
 
-![image](https://user-images.githubusercontent.com/82019030/170879424-e0824bc0-fc16-4824-8636-3f1a2275f9e4.png)
+![image](https://user-images.githubusercontent.com/82019030/170882817-08f6d9e2-99a6-431a-853a-436832478349.png)
 
 ![image](https://user-images.githubusercontent.com/82019030/170879456-5e26c3f9-63dc-4c0e-b512-fa13fd1e69f3.png)
 
@@ -204,7 +204,7 @@ Buatlah plot sederhana untuk visualisasi data
 #### 5B
 Lakukan uji ANOVA dua arah
 
-![image](https://user-images.githubusercontent.com/82019030/170879507-bcc21e8a-7657-494c-a61f-5698724e7b6b.png)
+![image](https://user-images.githubusercontent.com/82019030/170882790-d2eab332-90f0-4c3e-b44e-e7e2ac06a8c6.png)
 
 ![image](https://user-images.githubusercontent.com/82019030/170879519-149b535b-5864-4f36-860b-746889d3db1f.png)
 
